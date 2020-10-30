@@ -4,8 +4,6 @@
 }
 .convertBox {
     background-color: rgba(255, 255, 255, 0.781);
-    
-    height: 500px;
     padding: 15px;
     border-radius: 20px;
 }
@@ -70,16 +68,26 @@ span{
 }
 .convertBoxDate {
     height: 35px;
-    border: 1px solid lightblue;
+    background-color: rgba(255, 255, 255, 0.829);
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid black;
     outline: none;
     width: 80%;
-    letter-spacing: 2px;   
-    background-color: hsla(220, 100%, 65%, 0.856);
-    border: 1px;
-    border-color: #4D88FF;;
-    color: white;
+    letter-spacing: 2px;
     font-size: 14pt;
     letter-spacing: 2px;
+}
+
+.convertBoxButton{
+    background-color: hsla(220, 100%, 65%, 0.856);
+    border: none;
+    color: white;
+    font-size: 16pt;
+    font-weight: 280;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .imgArrow {
