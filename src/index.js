@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './rendr';
+import './css/index.css';
+import App from './components/rendr';
 import Brain from './logic';
 import reportWebVitals from './reportWebVitals';
 

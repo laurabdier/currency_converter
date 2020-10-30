@@ -1,8 +1,8 @@
 import React, {useEffect} from "react"
 import { observer } from "mobx-react"
 
-import Loader from './components/Loader'
-import "./css/rendr.css";
+import Loader from './Loader'
+import "../css/rendr.css";
 
 
 const App = observer(({ brain }) => {
