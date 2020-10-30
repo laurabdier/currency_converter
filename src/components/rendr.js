@@ -74,7 +74,7 @@ const App = observer(({ brain }) => {
 
                     <div className="row" style={{marginTop: 50, width: "100%"}}>
                         <div className="col-10 offset-1 justify-content-center">
-                            <button type="button" className="convertBoxButton"> CONVERT</button>
+                            <button type="button" className="convertBoxButton" onClick={_ => brain.convert()}> CONVERT</button>
                         </div>
                     </div>
                 </div>
