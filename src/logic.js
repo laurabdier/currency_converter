@@ -36,7 +36,6 @@ class Brain {
         await request(constructorUrl)
         .then(response => {
             response = JSON.parse(response.body);
-            console.log("responseAPI construct :", response);
             
             this.currency1 = response.base;
             this.currency2 = response.base;
@@ -79,7 +78,7 @@ class Brain {
     async convert(){
         let url = `https://data.fixer.io/api/convert?access_key=${apiKey}&from=${this.currency1}&to=${this.currency2}&amount=${this.amount}`;;
         const today = new Date().toISOString().slice(0,10);
-        if(this.date != today){
+        if(this.date !== today){
             this.historicalConvert();
             return;
         }
@@ -87,33 +86,25 @@ class Brain {
 
         await request(url)
             .then(response => {
-                
-                response = JSON.parse(response.body)
-                console.log("response api:", response)
+                response = JSON.parse(response.body);
                 this.result = response.result;
                 this.todayRate = response.info.rate;
-                console.log("this result : : ", this.result)
             })
             .catch(err => {
-                console.log("err : ", err);
+                console.error("err : ", err);
                 this.result = "An error occured, please try again later."
             })
     }
 
     historicalConvert() {
         let url = `https://data.fixer.io/api/${this.date}?access_key=${apiKey}&base=${this.currency1}&symbols=${this.currency2}`;
-        
-
         request(url)
             .then(response => {
                 response = JSON.parse(response.body)
                 this.todayRate = response.rates[this.currency2]
                 this.result = this.amount * this.todayRate;
-                
-
             })
             .catch(err => {
-                console.log("err : ", err);
                 this.result = "An error occured, please try again later."
             })
     }

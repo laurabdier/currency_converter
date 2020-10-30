@@ -1,7 +1,5 @@
 import React, {useEffect} from "react"
 import { observer } from "mobx-react"
-import arrowDown from './images/down.png';
-import arrow from './images/right.png'
 
 import Loader from './components/Loader'
 import "./css/rendr.css";
@@ -12,7 +10,7 @@ const App = observer(({ brain }) => {
 
     useEffect(() => {
         brain.init();
-    }, [])
+    }, [brain]);
 
     if (brain.state === "loading") {
         return <Loader/>
@@ -40,7 +38,7 @@ const App = observer(({ brain }) => {
                                 <p className="convertBoxtext"> 1 {brain.currency1} </p>
                                 </div>
                                 <div className="col-sm-2 justify-content-left">
-                                <p>  <img src={arrow} className="imgArrow"></img> </p>
+                                <p>  <img src="/right.png" className="imgArrow" alt="arrow"></img> </p>
                                 </div>
                                 <div className="col-sm-5 justify-content-right">
                                 <p className="convertBoxtext"> {brain.todayRate} {brain.currency2}</p>
@@ -59,7 +57,6 @@ const App = observer(({ brain }) => {
                         <div className="col-5 d-flex justify-content-center">
                                     <select className="convertBoxCurrency" value={brain.currency1} onChange={event => brain.setCurrency1(event)}>
                                         {
-                                            //  console.log("brain : ", brain.currencies)
                                             brain.currencies.map((currency, index) => (
                                                 <option key={index} value={currency}>{currency}</option>
                                             ))
@@ -71,7 +68,7 @@ const App = observer(({ brain }) => {
 
                     <div className="row" style={{width: "100%", marginTop: 50 }}>
                         <div className="col-12 d-flex justify-content-center" >
-                            <span type="button" onClick={_ => brain.convert()}> <img src={arrowDown} className="imgArrowDown"></img>  </span>
+                            <span type="button" onClick={_ => brain.convert()}> <img src="/down.png" className="imgArrowDown" alt="arrow"></img>  </span>
                         </div>
                     </div>
 
@@ -82,7 +79,6 @@ const App = observer(({ brain }) => {
                         <div className="col-5 d-flex justify-content-center">
                                     <select className="convertBoxCurrency" value={brain.currency2} onChange={event => brain.setCurrency2(event)}>
                                         {
-                                            //  console.log("brain : ", brain.currencies)
                                             brain.currencies.map((currency, index) => (
                                                 <option key={index} value={currency}>{currency}</option>
                                             ))

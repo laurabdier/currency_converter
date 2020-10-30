@@ -1,6 +1,6 @@
 import Brain from "../logic.js"
 
-describe("Simple test ", () => {
+describe("Simple test", () => {
   it("init normally", async () => {
     const brain = new Brain
     await brain.init();
