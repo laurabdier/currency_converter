@@ -1,0 +1,32 @@
+.convertModalBoxNumber{
+    width: 80%;
+    height: 35px;
+    letter-spacing: 2px;
+    margin: 0;
+    font-size: 12pt;
+    padding-left: 15px;
+    background-color: rgba(255, 255, 255, 0.829);
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid black;
+}
+
+.convertBoxTitle2{
+    letter-spacing: 2px;
+    font-size: 12pt;
+    margin: 15px;
+}
+
+.convertModalBoxDate{
+    height: 35px;
+    background-color: rgba(255, 255, 255, 0.829);
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid black;
+    outline: none;
+    width: 80%;
+    font-size: 12pt;
+    letter-spacing: 2px;
+}

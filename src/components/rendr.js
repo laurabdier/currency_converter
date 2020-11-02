@@ -3,6 +3,7 @@ import { observer } from "mobx-react"
 
 import Loader from './Loader'
 import "../css/rendr.css";
+import ModalNewCurrency from "./ModalNewCurrrency";
 
 
 const App = observer(({ brain }) => {
@@ -51,13 +52,13 @@ const App = observer(({ brain }) => {
                         </div>
                     </div>
 
-                    <div className="row" style={{ width: "100%", marginTop: 50 }}>
+                    <div className="row" style={{ width: "100%", marginTop: 50}}>
                         <div className="col-12 d-flex justify-content-center" >
                             <span type="button" onClick={_ => brain.convert()}> <img src="/down.png" className="imgArrowDown" alt="arrow"></img>  </span>
                         </div>
                     </div>
 
-                    <div className="row" style={{ marginTop: 50 }}>
+                    <div className="row" style={{ marginTop: 50}}>
                         <div className="col-5 offset-1 d-flex justify-content-left">
                             <div className="convertBoxResult"><p className="result">{brain.result}</p></div>
                         </div>
@@ -72,7 +73,17 @@ const App = observer(({ brain }) => {
                         </div>
                     </div>
 
-                    <div className="row" style={{marginTop: 50, width: "100%"}}>
+                    <div className="row" style={{ marginTop: 10}}>
+                        <div className="col-5 offset-1 d-flex justify-content-center" ></div>
+                        <div className="col-5 d-flex justify-content-center">
+                            <button type="button" className="btn btn-primary convertBoxModal" data-toggle="modal" data-target="#modalNewCurrency">
+                                Want to add a currency ?
+                            </button>
+                            <ModalNewCurrency brain={brain}/>
+                        </div>
+                    </div>
+
+                    <div className="row" style={{ marginTop: 50, width: "100%" }}>
                         <div className="col-10 offset-1 justify-content-center">
                             <button type="button" className="convertBoxButton" onClick={_ => brain.convert()}> CONVERT</button>
                         </div>

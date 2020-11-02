@@ -90,6 +90,15 @@ span{
     margin-bottom: 20px;
 }
 
+.convertBoxModal{
+    min-height: 35px;
+    border: 1px solid lightblue;
+    outline: none;
+    width: 80%;
+    margin-left: 10px;
+    letter-spacing: 2px;
+}
+
 .imgArrow {
     height: 20px;
     width: auto;
