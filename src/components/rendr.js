@@ -1,7 +1,8 @@
 import React, { useEffect } from "react"
 import { observer } from "mobx-react"
+import Loader from "react-loader-spinner";
 
-import Loader from './Loader'
+import LoaderComponent from './Loader'
 import "../css/rendr.css";
 import ModalNewCurrency from "./ModalNewCurrrency";
 
@@ -14,7 +15,19 @@ const App = observer(({ brain }) => {
     }, [brain]);
 
     if (brain.state === "loading") {
-        return <Loader />
+        return (
+            <div>
+                <div className="col-12 align-items-center justify-content-center">
+                    <Loader
+                        type="TailSpin"
+                        color="#FFFFFF"
+                        height={100}
+                        width={100}
+                        className="spiner"
+                    />
+                </div>
+            </div>
+        )
     }
     else if (brain.state === "error") {
         return <p>error while fetching API.</p>
@@ -52,13 +65,13 @@ const App = observer(({ brain }) => {
                         </div>
                     </div>
 
-                    <div className="row" style={{ width: "100%", marginTop: 50}}>
+                    <div className="row" style={{ width: "100%", marginTop: 50 }}>
                         <div className="col-12 d-flex justify-content-center" >
                             <span type="button" onClick={_ => brain.convert()}> <img src="/down.png" className="imgArrowDown" alt="arrow"></img>  </span>
                         </div>
                     </div>
 
-                    <div className="row" style={{ marginTop: 50}}>
+                    <div className="row" style={{ marginTop: 50 }}>
                         <div className="col-5 offset-1 d-flex justify-content-left">
                             <div className="convertBoxResult"><p className="result">{brain.result}</p></div>
                         </div>
@@ -73,13 +86,13 @@ const App = observer(({ brain }) => {
                         </div>
                     </div>
 
-                    <div className="row" style={{ marginTop: 10}}>
+                    <div className="row" style={{ marginTop: 10 }}>
                         <div className="col-5 offset-1 d-flex justify-content-center" ></div>
                         <div className="col-5 d-flex justify-content-center">
                             <button type="button" className="btn btn-primary convertBoxModal" data-toggle="modal" data-target="#modalNewCurrency">
                                 Want to add a currency ?
                             </button>
-                            <ModalNewCurrency brain={brain}/>
+                            <ModalNewCurrency brain={brain} />
                         </div>
                     </div>
 
