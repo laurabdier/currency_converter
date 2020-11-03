@@ -77,7 +77,7 @@ class Brain {
 
     async convert(){
         this.state = "loading"
-        let url = `https://data.fixer.io/api/convert?access_key=${apiKey}&from=${this.currency1}&to=${this.currency2}&amount=${this.amount}`;
+        const url = `https://data.fixer.io/api/convert?access_key=${apiKey}&from=${this.currency1}&to=${this.currency2}&amount=${this.amount}`;
         const today = new Date().toISOString().slice(0,10);
         if(this.date !== today){
             this.historicalConvert();
@@ -100,7 +100,7 @@ class Brain {
 
     async historicalConvert() {
         this.state = "loading";
-        let url = `https://data.fixer.io/api/${this.date}?access_key=${apiKey}&base=${this.currency1}&symbols=${this.currency2}`;
+        const url = `https://data.fixer.io/api/${this.date}?access_key=${apiKey}&base=${this.currency1}&symbols=${this.currency2}`;
         await request(url)
             .then(response => {
                 response = JSON.parse(response.body)

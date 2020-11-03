@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import { observer } from "mobx-react"
 import Loader from "react-loader-spinner";
 
-import LoaderComponent from './Loader'
+
 import "../css/rendr.css";
 import ModalNewCurrency from "./ModalNewCurrrency";
 
