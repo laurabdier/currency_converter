@@ -93,7 +93,8 @@ class Brain {
             })
             .catch(err => {
                 console.error("err : ", err);
-                this.result = "An error occured, please try again later."
+                this.result = "An error occured, please try again later.";
+                this.state = "ok";
             })
     }
 
@@ -108,7 +109,8 @@ class Brain {
                 this.state = "ok";
             })
             .catch(err => {
-                this.result = "An error occured, please try again later."
+                this.result = "An error occured, please try again later.";
+                this.state = "ok";
             })
     }
 

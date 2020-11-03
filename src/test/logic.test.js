@@ -11,6 +11,6 @@ describe("Simple test", () => {
       const brain = new Brain
       await brain.init();
       await brain.convert();
-      expect(brain.result).toBe(1);
+      expect(brain.result).toBe("1.00");
   })
 })
